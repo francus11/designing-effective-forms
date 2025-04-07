@@ -65,9 +65,6 @@ async function fetchAndFillCountries() {
         }));
 
         countries.sort((a, b) => a.name.localeCompare(b.name));
-        // FIXME: Remove log line after testing 
-        let logCountries = data.sort((a, b) => a.name.common.localeCompare(b.name.common))
-        console.log(logCountries);
         countryInput.innerHTML = countries.map(country => 
             `<option value="${country.name}" data-flag="${country.flag}">
                 ${country.flag ? `<img class="flag-icon" src="${country.flag}" alt="Flag">` : ''} 
@@ -145,7 +142,6 @@ function countryCodesResultFormatOption (state) {
 }
 
 
-// TODO: add click event for arrow
 $(document).ready(function () {
     // Inicjalizacja Select2 dla dropdownów
     $('#country').select2({
